@@ -18,8 +18,8 @@ if not 1 <= port <= 65535:
     sys.exit(1)
 
 try:
-    api_id = int(os.environ["API_ID"])
-    api_hash = os.environ["API_HASH"]
+    api_id = int(os.environ["API_ID","1813445"])
+    api_hash = os.environ["API_HASH","8f45dabd56be5ad1619df16af9eca560"]
 except (KeyError, ValueError):
     traceback.print_exc()
     print("\n\nPlease set the API_ID and API_HASH environment variables correctly")
@@ -27,7 +27,7 @@ except (KeyError, ValueError):
     sys.exit(1)
 
 try:
-    index_settings_str = os.environ["INDEX_SETTINGS"].strip()
+    index_settings_str = os.environ["INDEX_SETTINGS","{\n"index_all": false,\n"index_private":false,\n"index_group": false,\n"index_channel": true,\n"exclude_chats": [],\n"include_chats": ["-1001404974777"]\n}"].strip()
     index_settings = json.loads(index_settings_str)
 except:
     traceback.print_exc()
@@ -35,7 +35,7 @@ except:
     sys.exit(1)
 
 try:
-    session_string = os.environ["SESSION_STRING"]
+    session_string = os.environ["SESSION_STRING","BQBImQwNKi7sah7jXUvXUrwM3bYktU0Qw2DeBSNxwYuDXjTJUIJOBEpJKtZ6TnpJp6rk3SVKJtbsgFIVinrcXgeN68ixk2LGA1GxFv_tO8OjC8668XqgOF0QAW-uvQeC4DghoIhN-Oh_S97iezfkNUAv9Uzv_nOpYNCwioJ0plARRLpvkZm5eAC3IGti9i3efvkCCKL30-U_GAuovVum8s6-4csnvMStIHYeiC69jsOQIjDdIaPvfIAAWDXG4vtJlZaZkfhi6M1BACNtlu0-NssFe3kZ8LYuQTrId0NXbxCOF5jvkoGL3bnkP_Me3FWGb5cWCE66JeiJU4Xx9p9yVGZLU2K9uQA"]
 except (KeyError, ValueError):
     traceback.print_exc()
     print("\n\nPlease set the SESSION_STRING environment variable correctly")
