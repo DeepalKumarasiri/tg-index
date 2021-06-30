@@ -18,8 +18,8 @@ if not 1 <= port <= 65535:
     sys.exit(1)
 
 try:
-    api_id = int(os.environ["API_ID","1813445"])
-    api_hash = os.environ["API_HASH","8f45dabd56be5ad1619df16af9eca560"]
+    api_id = int(os.environ("API_ID","1813445"))
+    api_hash = os.environ("API_HASH","8f45dabd56be5ad1619df16af9eca560")
 except (KeyError, ValueError):
     traceback.print_exc()
     print("\n\nPlease set the API_ID and API_HASH environment variables correctly")
